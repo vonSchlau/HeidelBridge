@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="pico.violet.min.css" />
+    <link rel="stylesheet" href="heidelbridge.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <title>HeidelBridge - Firmware</title>
+</head>
+
+<body>
+
+    <div class="hb-banner">
+        <img class="hb-banner-image" src="blueberry.svg" />
+        <h1 class="hb-banner-headline">HeidelBridge</h1>
+    </div>
+
+    <main class="container">
+
+        <h3 class="hb-page-headline">Firmware Update</h3>
+
+        <p id="version">Currently installed: ...</p>
+
+        <form id="otaForm">
+            <input type="file" id="firmwareFile" name="firmware" accept=".bin" required>
+            <button class="hb-block-button" type="submit">Install firmware</button>
+        </form>
+
+    </main>
+
+    <!-- Busy Box -->
+    <dialog id="busy-box">
+        <article>
+            <header>
+                <h3>Updating</h3>
+            </header>
+            <progress></progress>
+            <p>Firmware update in progress...</p>
+        </article>
+    </dialog>
+    <!-- ./ Busy Box -->
+
+    <!-- Message Box -->
+    <dialog id="message-box">
+        <article>
+            <header>
+                <h3 id="message-box-title">Title</h3>
+            </header>
+            <p id="message-box-text">Text</p>
+            <footer>
+                <button autofocus data-target="message-box" onclick="toggleModal(event)">OK</button>
+            </footer>
+        </article>
+    </dialog>
+    <!-- ./ Message Box -->
+
+    <script src="modal.js"></script>
+    <script src="update.js"></script>
+</body>
+
+</html>
